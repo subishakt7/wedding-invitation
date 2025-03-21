@@ -33,12 +33,25 @@ export const metadata: Metadata = {
     description: `Join us in celebrating the wedding reception of ${COUPLE_INFO.groom.name} and ${COUPLE_INFO.bride.name}. Together with their families, we invite you to share in our joy.`,
     type: 'website',
     locale: 'en_US',
+    images: [
+      {
+        url: '/images/evening.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Wedding Reception Celebration'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
     title: `${COUPLE_INFO.groom.name} & ${COUPLE_INFO.bride.name} Wedding Reception`,
     description: `Join us in celebrating the wedding reception of ${COUPLE_INFO.groom.name} and ${COUPLE_INFO.bride.name}. Together with their families, we invite you to share in our joy.`,
+    images: ['/images/evening.jpeg']
   },
+  metadataBase: new URL('https://your-domain.com'), // Replace with your actual domain
+  alternates: {
+    canonical: '/'
+  }
 }
 
 export default function RootLayout({
