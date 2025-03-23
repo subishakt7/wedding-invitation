@@ -8,8 +8,10 @@ interface EventCardProps {
 }
 
 export const EventCard = ({ event, isReception = false }: EventCardProps) => {
-  const { title, date, time, venue, location } = event;
-  
+  const { date, time, venue, location } = event;
+  const title = isReception ? "Wedding Reception" : "Wedding Ceremony";
+  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location || venue)}`;
+
   if (!isReception) {
     return (
       <div className="text-center backdrop-blur-md rounded-2xl p-6 md:p-8 transition-all duration-500 bg-wedding-red/10 shadow-glow hover:shadow-glow-blue">
@@ -40,48 +42,24 @@ export const EventCard = ({ event, isReception = false }: EventCardProps) => {
           {venue}
         </p>
         <div className="mt-4 md:mt-6">
-          <div className="mt-4 flex flex-col items-center space-y-2">
-            <div className="relative group">
-              <a
-                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location || '')}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-white/90 hover:text-white transition-colors duration-300"
+          <a 
+            href={googleMapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors duration-300 group"
+          >
+            <span className="animate-bounce-icon inline-block bg-wedding-red/20 p-2 rounded-full">
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                viewBox="0 0 24 24" 
+                fill="currentColor" 
+                className="w-8 h-8"
               >
-                <div className="relative">
-                  <svg
-                    className="h-8 w-8 md:h-10 md:w-10 text-wedding-gold group-hover:scale-110 transition-transform duration-300"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                  <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-sm text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                    Click to view location
-                  </div>
-                </div>
-                <span className="text-lg md:text-xl">{venue}</span>
-              </a>
-            </div>
-            {location && (
-              <p className="text-base md:text-lg text-white/70 group-hover:text-white transition-colors duration-300">
-                {location}
-              </p>
-            )}
-          </div>
+                <path fillRule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
+              </svg>
+            </span>
+            <span className="text-lg hover:underline">View Location</span>
+          </a>
         </div>
       </div>
     </div>

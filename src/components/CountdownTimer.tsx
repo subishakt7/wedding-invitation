@@ -41,36 +41,38 @@ const CountdownTimer = () => {
 
   return (
     <div className="text-center">
-      <h4 className="font-romantic text-3xl sm:text-4xl md:text-5xl text-white/90 mb-6 italic animate-glow-text mt-2 mb-5">
+      <h4 className="font-romantic text-xl sm:text-2xl md:text-2xl text-white/90 mb-4 italic animate-glow-text">
         Counting Down to the Celebration
       </h4>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
-        <div className="bg-white/30 backdrop-blur-sm rounded-xl p-4 hover:bg-white/40 transition-all">
-          <div className="text-4xl md:text-5xl font-romantic text-wedding-purple mb-1">
+      <div className="grid grid-cols-4 gap-2 md:gap-3 max-w-3xl mx-auto">
+        <div className="bg-white/20 backdrop-blur-sm rounded-lg p-2 md:p-3 hover:bg-white/30 transition-all duration-300 shadow-lg">
+          <div className="text-lg md:text-2xl font-romantic text-white mb-1 animate-pulse-slow">
             {String(timeLeft.days).padStart(2, '0')}
           </div>
-          <div className="text-sm uppercase tracking-widest text-wedding-text/80">Days</div>
+          <div className="text-[10px] md:text-xs uppercase tracking-wider text-white/70">Days</div>
         </div>
-        <div className="bg-white/30 backdrop-blur-sm rounded-xl p-4 hover:bg-white/40 transition-all">
-          <div className="text-4xl md:text-5xl font-romantic text-wedding-purple mb-1">
+        <div className="bg-white/20 backdrop-blur-sm rounded-lg p-2 md:p-3 hover:bg-white/30 transition-all duration-300 shadow-lg">
+          <div className="text-lg md:text-2xl font-romantic text-white mb-1 animate-pulse-slow">
             {String(timeLeft.hours).padStart(2, '0')}
           </div>
-          <div className="text-sm uppercase tracking-widest text-wedding-text/80">Hours</div>
+          <div className="text-[10px] md:text-xs uppercase tracking-wider text-white/70">Hours</div>
         </div>
-        <div className="bg-white/30 backdrop-blur-sm rounded-xl p-4 hover:bg-white/40 transition-all">
-          <div className="text-4xl md:text-5xl font-romantic text-wedding-purple mb-1">
+        <div className="bg-white/20 backdrop-blur-sm rounded-lg p-2 md:p-3 hover:bg-white/30 transition-all duration-300 shadow-lg">
+          <div className="text-lg md:text-2xl font-romantic text-white mb-1 animate-pulse-slow">
             {String(timeLeft.minutes).padStart(2, '0')}
           </div>
-          <div className="text-sm uppercase tracking-widest text-wedding-text/80">Minutes</div>
+          <div className="text-[10px] md:text-xs uppercase tracking-wider text-white/70">Minutes</div>
         </div>
-        <div className="bg-white/30 backdrop-blur-sm rounded-xl p-4 hover:bg-white/40 transition-all">
-          <div className="text-4xl md:text-5xl font-romantic text-wedding-purple mb-1">
+        <div className="bg-white/20 backdrop-blur-sm rounded-lg p-2 md:p-3 hover:bg-white/30 transition-all duration-300 shadow-lg">
+          <div className="text-lg md:text-2xl font-romantic text-white mb-1 animate-pulse-slow">
             {String(timeLeft.seconds).padStart(2, '0')}
           </div>
-          <div className="text-sm uppercase tracking-widest text-wedding-text/80">Seconds</div>
+          <div className="text-[10px] md:text-xs uppercase tracking-wider text-white/70">Seconds</div>
         </div>
       </div>
-      
+      <h3 className="font-romantic text-sm md:text-base text-white/80 mt-4 italic">
+        Left for the Celebration
+      </h3>
     </div>
   )
 }
