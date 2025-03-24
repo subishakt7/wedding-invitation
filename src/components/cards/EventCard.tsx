@@ -42,22 +42,24 @@ export const EventCard = ({ event, isReception = false }: EventCardProps) => {
           {venue}
         </p>
         <div className="mt-4 md:mt-6">
+          <div className="w-48 h-32 mx-auto rounded-lg overflow-hidden shadow-lg mb-2">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3909.94371289668!2d75.62356187496815!3d11.48398578871106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba6899686380cff%3A0x56e473c4785fbd8f!2sAnil%20MK%20home!5e0!3m2!1sen!2sin!4v1742795954173!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-full"
+            ></iframe>
+          </div>
           <a 
-            href={googleMapsUrl}
+            href="https://maps.app.goo.gl/ZvqykpGWCeEprSQS9"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors duration-300 group"
           >
-            <span className="animate-bounce-icon inline-block bg-wedding-red/20 p-2 rounded-full">
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                viewBox="0 0 24 24" 
-                fill="currentColor" 
-                className="w-8 h-8"
-              >
-                <path fillRule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
-              </svg>
-            </span>
             <span className="text-lg hover:underline">View Location</span>
           </a>
         </div>
